@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="pizzaapp.controller.PizzaController" spacing="10" alignment="CENTER">
+    
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <ImageView fitHeight="80" fitWidth="80" preserveRatio="true">
+            <image>
+                <Image url="@pizza1.jpg" />
+            </image>
+        </ImageView>
+        <Label text="Pizza Shop" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Customer Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="nameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        
+        <Label text="Customer Phone:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="phoneField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        
+        <Label text="Quantity:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="quantityField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        
+        <Label text="Pizza Type:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <HBox spacing="10" GridPane.rowIndex="3" GridPane.columnIndex="1">
+            <RadioButton fx:id="cheeseRadio" text="Cheese"/>
+            <RadioButton fx:id="vegetarianRadio" text="Vegetarian"/>
+            <RadioButton fx:id="meatLoverRadio" text="Meat Lover"/>
+        </HBox>
+        
+        <Label text="Pizza Size:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="sizeCombo" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    </GridPane>
+    
+    <HBox spacing="10" alignment="CENTER">
+        <Button fx:id="placeOrderButton" text="Place Order"/>
+        <Button fx:id="clearButton" text="Clear"/>
+    </HBox>
+    
+    <TextArea fx:id="orderSummaryArea" prefRowCount="6" prefColumnCount="20" promptText="Order Summary"/>
+</VBox>
