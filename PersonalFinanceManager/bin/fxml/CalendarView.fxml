@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.CalendarController"
+      spacing="10"
+      xmlns="http://javafx.com/javafx/17"
+      style="-fx-padding: 10;">
+
+    <Label text="Calendar View" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+    
+    <Label text="Calendar functionality will be available in the next update."/>
+    
+    <DatePicker fx:id="datePicker" promptText="Select a date"/>
+    
+    <Label fx:id="selectedDateLabel" text="No date selected"/>
+    
+    <ListView fx:id="transactionsListView" prefHeight="200">
+        <placeholder>
+            <Label text="No transactions for selected date"/>
+        </placeholder>
+    </ListView>
+
+</VBox>

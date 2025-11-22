@@ -1,0 +1,288 @@
+/* Modern Professional Car Loan Calculator Stylesheet */
+
+.root {
+    -fx-background-color: linear-gradient(to bottom, #f5f7fa 0%, #c3cfe2 100%);
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Main Container */
+.main-container {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+    -fx-padding: 30;
+}
+
+/* Header Section */
+.header-section {
+    -fx-background-color: linear-gradient(to right, #667eea 0%, #764ba2 100%);
+    -fx-background-radius: 10 10 0 0;
+    -fx-padding: 20;
+}
+
+.header-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.header-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: rgba(255, 255, 255, 0.9);
+    -fx-padding: 5 0 0 0;
+}
+
+/* Section Titles */
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 15 0 10 0;
+}
+
+/* Labels */
+.label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #34495e;
+    -fx-font-weight: 500;
+}
+
+/* Text Fields */
+.text-field {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 8;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 8;
+    -fx-border-width: 1.5;
+    -fx-padding: 10 15;
+    -fx-font-size: 13px;
+    -fx-pref-height: 40;
+}
+
+.text-field:focused {
+    -fx-background-color: white;
+    -fx-border-color: #667eea;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(three-pass-box, rgba(102, 126, 234, 0.3), 5, 0, 0, 0);
+}
+
+.text-field:error {
+    -fx-border-color: #e74c3c;
+    -fx-background-color: #fff5f5;
+}
+
+/* Result Text Field */
+.result-field {
+    -fx-background-color: linear-gradient(to right, #667eea 0%, #764ba2 100%);
+    -fx-background-radius: 10;
+    -fx-border-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-padding: 15;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: linear-gradient(to right, #667eea 0%, #764ba2 100%);
+    -fx-background-radius: 8;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 30;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(102, 126, 234, 0.4), 5, 0, 0, 2);
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to right, #5568d3 0%, #6a3d92 100%);
+    -fx-effect: dropshadow(three-pass-box, rgba(102, 126, 234, 0.6), 8, 0, 0, 3);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.button:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.button-calculate {
+    -fx-background-color: linear-gradient(to right, #11998e 0%, #38ef7d 100%);
+}
+
+.button-calculate:hover {
+    -fx-background-color: linear-gradient(to right, #0d7a72 0%, #2dd469 100%);
+}
+
+.button-clear {
+    -fx-background-color: linear-gradient(to right, #eb3349 0%, #f45c43 100%);
+}
+
+.button-clear:hover {
+    -fx-background-color: linear-gradient(to right, #c92a3d 0%, #d44d35 100%);
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 8;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 8;
+    -fx-border-width: 1.5;
+    -fx-padding: 5;
+    -fx-pref-height: 40;
+}
+
+.combo-box:focused {
+    -fx-background-color: white;
+    -fx-border-color: #667eea;
+    -fx-border-width: 2;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: white;
+    -fx-text-fill: #34495e;
+    -fx-padding: 8 12;
+}
+
+.combo-box .list-cell:hover {
+    -fx-background-color: #f0f0f0;
+}
+
+/* Slider */
+.slider {
+    -fx-pref-width: 300;
+}
+
+.slider .track {
+    -fx-background-color: #dee2e6;
+    -fx-background-radius: 5;
+    -fx-pref-height: 8;
+}
+
+.slider .thumb {
+    -fx-background-color: linear-gradient(to right, #667eea 0%, #764ba2 100%);
+    -fx-background-radius: 10;
+    -fx-pref-width: 20;
+    -fx-pref-height: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(102, 126, 234, 0.5), 5, 0, 0, 2);
+}
+
+.slider .thumb:hover {
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+}
+
+.slider .axis {
+    -fx-tick-label-fill: #667eea;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+/* Slider Value Display */
+.slider-value {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #667eea;
+    -fx-background-color: #f0f4ff;
+    -fx-background-radius: 8;
+    -fx-padding: 8 15;
+    -fx-alignment: center;
+}
+
+/* Info Labels */
+.info-label {
+    -fx-font-size: 11px;
+    -fx-text-fill: #7f8c8d;
+    -fx-font-style: italic;
+}
+
+/* Error Message */
+.error-message {
+    -fx-text-fill: #e74c3c;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-color: #fff5f5;
+    -fx-background-radius: 5;
+    -fx-padding: 8;
+    -fx-border-color: #e74c3c;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+}
+
+/* Success Message */
+.success-message {
+    -fx-text-fill: #27ae60;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-color: #f0fff4;
+    -fx-background-radius: 5;
+    -fx-padding: 8;
+    -fx-border-color: #27ae60;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+}
+
+/* Separator */
+.separator {
+    -fx-background-color: #dee2e6;
+    -fx-pref-height: 1;
+}
+
+/* Card Style for Sections */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 2);
+    -fx-padding: 20;
+}
+
+/* ScrollPane Styling */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-pref-width: 12;
+}
+
+.scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-pref-height: 12;
+}
+
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: rgba(102, 126, 234, 0.3);
+    -fx-background-radius: 6;
+}
+
+.scroll-pane .scroll-bar .thumb:hover {
+    -fx-background-color: rgba(102, 126, 234, 0.5);
+}
+
+.scroll-pane .scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar .increment-button,
+.scroll-pane .scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-pane .scroll-bar .increment-arrow,
+.scroll-pane .scroll-bar .decrement-arrow {
+    -fx-shape: "";
+    -fx-padding: 0;
+}
+

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.BillRemindersController"
+      spacing="10"
+      xmlns="http://javafx.com/javafx/17"
+      style="-fx-padding: 10;">
+
+    <!-- Bill Reminders Table -->
+    <TableView fx:id="billsTable" prefHeight="200">
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Bill Name" prefWidth="120"/>
+            <TableColumn fx:id="amountColumn" text="Amount" prefWidth="80"/>
+            <TableColumn fx:id="dueDateColumn" text="Due Date" prefWidth="100"/>
+            <TableColumn fx:id="categoryColumn" text="Category" prefWidth="100"/>
+            <TableColumn fx:id="statusColumn" text="Status" prefWidth="80"/>
+            <TableColumn fx:id="reminderDaysColumn" text="Remind (Days)" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <!-- Form for adding/editing bills -->
+    <HBox spacing="10">
+        <VBox spacing="5">
+            <Label text="Bill Name"/>
+            <TextField fx:id="nameField" promptText="e.g., Electricity Bill"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Amount"/>
+            <TextField fx:id="amountField" promptText="0.00"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Due Date"/>
+            <DatePicker fx:id="dueDatePicker"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Category"/>
+            <TextField fx:id="categoryField" promptText="e.g., Utilities"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Remind (Days Before)"/>
+            <TextField fx:id="reminderDaysField" promptText="7"/>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="10">
+        <VBox spacing="5">
+            <Label text="Description"/>
+            <TextField fx:id="descriptionField" promptText="Optional description"/>
+        </VBox>
+    </HBox>
+
+    <!-- Action Buttons -->
+    <HBox spacing="10">
+        <Button text="Add Bill" onAction="#handleAddBill" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+        <Button text="Edit Bill" onAction="#handleEditBill" style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+        <Button text="Delete Bill" onAction="#handleDeleteBill" style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+        <Button text="Mark as Paid" onAction="#handleMarkPaid" style="-fx-background-color: #8BC34A; -fx-text-fill: white;"/>
+        <Button text="Mark as Unpaid" onAction="#handleMarkUnpaid" style="-fx-background-color: #FF9800; -fx-text-fill: white;"/>
+    </HBox>
+
+    <!-- Overdue Bills Alert -->
+    <VBox fx:id="overdueAlertBox" spacing="5" style="-fx-background-color: #ffebee; -fx-border-color: #f44336; -fx-border-width: 2; -fx-padding: 10;" visible="false">
+        <Label text="⚠️ OVERDUE BILLS" style="-fx-font-weight: bold; -fx-text-fill: #d32f2f; -fx-font-size: 14;"/>
+        <ListView fx:id="overdueBillsList" prefHeight="100">
+            <placeholder>
+                <Label text="No overdue bills"/>
+            </placeholder>
+        </ListView>
+    </VBox>
+
+    <!-- Upcoming Bills Alert -->
+    <VBox fx:id="upcomingAlertBox" spacing="5" style="-fx-background-color: #fff3e0; -fx-border-color: #ff9800; -fx-border-width: 2; -fx-padding: 10;" visible="false">
+        <Label text="📅 UPCOMING BILLS" style="-fx-font-weight: bold; -fx-text-fill: #f57c00; -fx-font-size: 14;"/>
+        <ListView fx:id="upcomingBillsList" prefHeight="100">
+            <placeholder>
+                <Label text="No upcoming bills"/>
+            </placeholder>
+        </ListView>
+    </VBox>
+</VBox>

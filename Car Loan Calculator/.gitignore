@@ -1,0 +1,29 @@
+# Compiled class files
+bin/
+*.class
+
+# IDE specific files
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# OS specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# Eclipse specific (optional - uncomment if you don't want to commit these)
+# .classpath
+# .project
+# .settings/
+

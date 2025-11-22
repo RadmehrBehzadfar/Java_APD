@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.BudgetController"
+      spacing="10"
+      xmlns="http://javafx.com/javafx/17"
+      style="-fx-padding: 10;">
+
+    <TableView fx:id="budgetTable" prefHeight="200">
+        <columns>
+            <TableColumn fx:id="categoryColumn" text="Category" prefWidth="150"/>
+            <TableColumn fx:id="limitColumn" text="Limit" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10">
+        <VBox spacing="5">
+            <Label text="Category"/>
+            <TextField fx:id="categoryField"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Limit"/>
+            <TextField fx:id="limitField"/>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="10">
+        <Button text="Add" onAction="#handleAddBudget"/>
+        <Button text="Edit" onAction="#handleEditBudget"/>
+        <Button text="Delete" onAction="#handleDeleteBudget"/>
+    </HBox>
+</VBox>

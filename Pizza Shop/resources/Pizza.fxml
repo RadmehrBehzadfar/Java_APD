@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="pizzaapp.controller.PizzaController" stylesheets="@styles.css">
+    
+    <!-- Top Header -->
+    <top>
+        <VBox styleClass="header-container" alignment="CENTER">
+            <HBox alignment="CENTER" spacing="15">
+                <ImageView fitHeight="100" fitWidth="100" preserveRatio="true" styleClass="pizza-image">
+                    <image>
+                        <Image url="@pizza1.jpg" />
+                    </image>
+                </ImageView>
+                <VBox alignment="CENTER_LEFT" spacing="5">
+                    <Label text="🍕 PIZZA SHOP" styleClass="header-title"/>
+                    <Label text="Order your favorite pizza with just a few clicks!" styleClass="header-subtitle"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <!-- Center Content -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+            <VBox spacing="20" alignment="CENTER" style="-fx-padding: 20;">
+                
+                <!-- Customer Information Card -->
+                <VBox styleClass="card" spacing="15">
+                    <Label text="👤 Customer Information" styleClass="card-title"/>
+                    <GridPane hgap="15" vgap="15" alignment="CENTER">
+                        <columnConstraints>
+                            <ColumnConstraints minWidth="120" prefWidth="120"/>
+                            <ColumnConstraints minWidth="250" prefWidth="250" hgrow="ALWAYS"/>
+                        </columnConstraints>
+                        
+                        <Label text="Full Name:" styleClass="form-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <TextField fx:id="nameField" promptText="Enter your name" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        
+                        <Label text="Phone Number:" styleClass="form-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <TextField fx:id="phoneField" promptText="(123) 456-7890" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    </GridPane>
+                </VBox>
+                
+                <!-- Pizza Selection Card -->
+                <VBox styleClass="card" spacing="15">
+                    <Label text="🍕 Pizza Selection" styleClass="card-title"/>
+                    
+                    <VBox spacing="12">
+                        <Label text="Pizza Type:" styleClass="form-label"/>
+                        <HBox spacing="10">
+                            <RadioButton fx:id="cheeseRadio" text="🧀 Cheese" styleClass="radio-button"/>
+                            <RadioButton fx:id="vegetarianRadio" text="🥬 Vegetarian" styleClass="radio-button"/>
+                            <RadioButton fx:id="meatLoverRadio" text="🥩 Meat Lover" styleClass="radio-button"/>
+                        </HBox>
+                    </VBox>
+                    
+                    <Separator styleClass="separator"/>
+                    
+                    <GridPane hgap="15" vgap="15" alignment="CENTER">
+                        <columnConstraints>
+                            <ColumnConstraints minWidth="120" prefWidth="120"/>
+                            <ColumnConstraints minWidth="250" prefWidth="250" hgrow="ALWAYS"/>
+                        </columnConstraints>
+                        
+                        <Label text="Size:" styleClass="form-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="sizeCombo" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        
+                        <Label text="Quantity:" styleClass="form-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <TextField fx:id="quantityField" promptText="Enter quantity" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    </GridPane>
+                </VBox>
+                
+                <!-- Price Display Card -->
+                <VBox styleClass="card" spacing="10" alignment="CENTER">
+                    <Label text="💰 Price Calculator" styleClass="card-title"/>
+                    <VBox spacing="5" alignment="CENTER">
+                        <Label fx:id="priceLabel" text="0.00" styleClass="price-display"/>
+                        <Label fx:id="priceSubLabel" text="Select options to see price" styleClass="price-label"/>
+                    </VBox>
+                </VBox>
+                
+                <!-- Action Buttons -->
+                <HBox spacing="15" alignment="CENTER">
+                    <Button fx:id="placeOrderButton" text="✅ Place Order" styleClass="primary-button" prefWidth="180"/>
+                    <Button fx:id="clearButton" text="🔄 Clear Form" styleClass="secondary-button" prefWidth="180"/>
+                </HBox>
+                
+                <!-- Order Summary Card -->
+                <VBox styleClass="card" spacing="15" prefWidth="600">
+                    <Label text="📋 Order Summary" styleClass="card-title"/>
+                    <TextArea fx:id="orderSummaryArea" styleClass="order-summary" prefRowCount="8" prefColumnCount="40" 
+                              promptText="Your order details will appear here..." editable="false" wrapText="true"/>
+                </VBox>
+                
+                <!-- Statistics Panel -->
+                <HBox styleClass="stats-container" spacing="30" alignment="CENTER" prefWidth="600">
+                    <VBox alignment="CENTER" spacing="5">
+                        <Label text="Total Orders" styleClass="stats-label"/>
+                        <Label fx:id="totalOrdersLabel" text="0" styleClass="stats-value"/>
+                    </VBox>
+                    <Separator orientation="VERTICAL" style="-fx-background-color: rgba(255,255,255,0.3);"/>
+                    <VBox alignment="CENTER" spacing="5">
+                        <Label text="Total Revenue" styleClass="stats-label"/>
+                        <Label fx:id="totalRevenueLabel" text="0.00" styleClass="stats-value"/>
+                    </VBox>
+                    <Separator orientation="VERTICAL" style="-fx-background-color: rgba(255,255,255,0.3);"/>
+                    <VBox alignment="CENTER" spacing="5">
+                        <Label text="Average Order" styleClass="stats-label"/>
+                        <Label fx:id="averageOrderLabel" text="0.00" styleClass="stats-value"/>
+                    </VBox>
+                </HBox>
+                
+                <!-- Status Message -->
+                <Label fx:id="statusLabel" styleClass="success-message" visible="false" managed="false" 
+                       prefWidth="600" alignment="CENTER" textAlignment="CENTER"/>
+                
+            </VBox>
+        </ScrollPane>
+    </center>
+    
+</BorderPane>

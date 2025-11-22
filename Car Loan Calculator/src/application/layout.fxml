@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  
+/**********************************************
+Workshop #02
+Course: APD545 - Winter
+Last Name: BEHZADFAR
+First Name: RADMEHR
+ID: 148786221
+Section:NDD
+This assignment represents my own work in accordance with Seneca Academic Policy.
+Signature: RadmehrBehzadfar
+Date:2025-02-11
+**********************************************/
+-->
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="application.Controller"
+      stylesheets="@styles.css"
+      spacing="0">
+    
+    <!-- Header Section -->
+    <VBox styleClass="header-section" spacing="5">
+        <Label text="🚗 Car Loan Payment Calculator" styleClass="header-title"/>
+        <Label text="Calculate your monthly payment with ease" styleClass="header-subtitle"/>
+    </VBox>
+    
+    <!-- ScrollPane for Main Content -->
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="scroll-pane">
+        <VBox styleClass="main-container" spacing="25">
+        <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+        
+        <!-- Vehicle Information Section -->
+        <VBox spacing="15" styleClass="card">
+            <Label text="Vehicle Information" styleClass="section-title"/>
+            
+            <GridPane hgap="15" vgap="15">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="150" prefWidth="150"/>
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="200"/>
+                </columnConstraints>
+                
+                <Label text="Type of Vehicle:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtTypeOfVehicle" promptText="e.g., Sedan, SUV, Truck" 
+                           GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+                
+                <Label text="Age of Vehicle:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtAgeOfVehicle" promptText="Years" 
+                           GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+            </GridPane>
+        </VBox>
+        
+        <!-- Loan Details Section -->
+        <VBox spacing="15" styleClass="card">
+            <Label text="Loan Details" styleClass="section-title"/>
+            
+            <GridPane hgap="15" vgap="15">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="150" prefWidth="150"/>
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="200"/>
+                </columnConstraints>
+                
+                <Label text="Vehicle Price ($):" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtPrice" promptText="Enter vehicle price" 
+                           GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+                <Label text="Required field" styleClass="info-label" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                
+                <Label text="Down Payment ($):" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtDownPayment" promptText="Enter down payment amount" 
+                           GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+                <Label text="Required field" styleClass="info-label" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                
+                <Label text="Interest Rate (%):" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtInterestRate" promptText="Annual interest rate" 
+                           GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+                <Label text="Required field" styleClass="info-label" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+                
+                <Label text="Loan Period:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                <VBox spacing="5" GridPane.rowIndex="6" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Slider fx:id="sldLoanPeriod" min="12" max="96" value="12" 
+                                majorTickUnit="12" showTickMarks="true" showTickLabels="true"
+                                HBox.hgrow="ALWAYS" styleClass="slider"/>
+                        <Label fx:id="lblLoanPeriod" text="12 months" styleClass="slider-value" 
+                               minWidth="80" alignment="CENTER"/>
+                    </HBox>
+                    <Label text="Drag to adjust (12-96 months)" styleClass="info-label"/>
+                </VBox>
+                
+                <Label text="Payment Frequency:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="cmbFrequency" promptText="Select frequency" 
+                          GridPane.rowIndex="7" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+            </GridPane>
+        </VBox>
+        
+        <!-- Action Buttons -->
+        <HBox spacing="15" alignment="CENTER">
+            <Button fx:id="btnCalculate" text="💰 Calculate Payment" 
+                    onAction="#calculatePayment" styleClass="button-calculate" HBox.hgrow="ALWAYS"/>
+            <Button fx:id="btnClear" text="🗑️ Clear All" 
+                    onAction="#clearFields" styleClass="button-clear" HBox.hgrow="ALWAYS"/>
+        </HBox>
+        
+        <!-- Result Section -->
+        <VBox spacing="10" alignment="CENTER">
+            <Label text="Your Estimated Payment" styleClass="section-title"/>
+            <TextField fx:id="txtResult" editable="false" promptText="Result will appear here" 
+                       styleClass="result-field" prefWidth="300" alignment="CENTER"/>
+            <Label fx:id="lblErrorMessage" styleClass="error-message" visible="false" managed="false"/>
+            <Label fx:id="lblSuccessMessage" styleClass="success-message" visible="false" managed="false"/>
+        </VBox>
+        </VBox>
+    </ScrollPane>
+</VBox>
